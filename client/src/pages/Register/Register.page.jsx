@@ -2,6 +2,7 @@
 import { Container } from "./Register.page.style"
 
 import { useState, useEffect } from "react";
+import { Navbar } from "../../components/Navbar/Navbar.component";
 import axios from "axios";
 
 export const RegisterPage = () => {
@@ -41,22 +42,25 @@ export const RegisterPage = () => {
     }
 
     return (
-        <Container>
-            <form onSubmit={handleSubmit} action="">
-                <input onChange={handleChange} type="text" name="username" id="" placeholder="Enter Username" />
-                <input onChange={handleChange} type="email" name="email" id="" placeholder="Enter Email" />
-                <input onChange={handleChange} type="number" name="mobileNumber" id="" placeholder="Enter Number" />
-                <input onChange={handleChange} type="password" name="password" id="" placeholder="Enter Password" />
+        <>
+            <Navbar />
+            <Container>
+                <form onSubmit={handleSubmit} action="">
+                    <input onChange={handleChange} type="text" name="username" placeholder="Enter Username" />
+                    <input onChange={handleChange} type="email" name="email" placeholder="Enter Email" />
+                    <input onChange={handleChange} type="number" name="mobileNumber" placeholder="Enter Number" />
+                    <input onChange={handleChange} type="password" name="password" placeholder="Enter Password" />
 
-                <select onChange={handleChange} name="role" id="">
-                    <option value="">Select Your Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="manager">Manager</option>
-                    <option value="staff">Staff</option>
-                </select>
-                <button type="submit">Submit</button>
-            </form>
-        </Container>
+                    <select onChange={handleChange} name="role">
+                        <option value="">Select Your Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="manager">Manager</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </Container>
+        </>
     )
 
 }

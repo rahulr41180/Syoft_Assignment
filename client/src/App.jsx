@@ -8,45 +8,47 @@ import { ProductCreatePage } from './pages/Product/Product.page';
 import { ProtectedRoute } from './components/PrivateRoute';
 import { AllProductList } from './pages/AllProduct/AllProductList.page';
 import { Navbar } from "./components/Navbar/Navbar.component";
+import { Logout } from "./components/Logout";
+
 
 function App() {
+  
   return (
     <Routes>
       <Route path="/" element={
-      <>
-        <Navbar />
-      </>}></Route>
+        <>
+          <Navbar />
+        </>
+      }></Route>
       <Route path="/register" element={
-      <>
-        <Navbar />
-        <RegisterPage />  
-      </>}></Route>
+        <>
+          <RegisterPage />  
+        </>
+      }></Route>
       <Route path="/login" element={
-      <>
-        <Navbar />
-        <LoginPage />
-      </>}></Route>
+        <>
+          <LoginPage />
+        </>
+      }></Route>
+      <Route path="/logout" element={
+        <>
+          <Logout />
+        </>
+      }></Route>
       <Route path="/createProduct" element={
-      <>
-        <ProtectedRoute>
-          <>
-
-            <Navbar />
+        <>
+          <ProtectedRoute>
             <ProductCreatePage />
-          </>
-        </ProtectedRoute>
-      </>}></Route>
-
+          </ProtectedRoute>
+        </>
+      }></Route>
       <Route path="/getProducts" element={
-      <>
-        <ProtectedRoute>
-
-          <>
-            <Navbar />
+        <>
+          <ProtectedRoute>
             <AllProductList />
-          </>
-        </ProtectedRoute>
-      </>}></Route>
+          </ProtectedRoute>
+        </>
+      }></Route>
     </Routes>
   );
 }

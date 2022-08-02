@@ -2,6 +2,7 @@
 import { Container } from "./Product.page.style"
 
 import { useState, useEffect } from "react";
+import { Navbar } from "../../components/Navbar/Navbar.component";
 import axios from "axios";
 
 export const ProductCreatePage = () => {
@@ -46,16 +47,19 @@ export const ProductCreatePage = () => {
     }
 
     return (
-        <Container>
-            <form onSubmit={handleSubmit} action="">
-                <input onChange={handleChange} type="text" name="productName" id="" placeholder="Enter Product Name" />
-                <input onChange={handleChange} type="text" name="productPrice" id="" placeholder="Enter Product Price" />
-                <input onChange={handleChange} type="text" name="productStock" id="" placeholder="Enter Product Stock" />
-                <input onChange={handleChange} type="text" name="productCategory" id="" placeholder="Enter Product Category" />
-                <textarea onChange={handleChange} name="productDescription" id="" cols="30" rows="4" placeholder="Enter Product Description"></textarea>
-                <button type="submit">Create Product</button>
-            </form>
-        </Container>
+        <>
+            <Navbar />
+            <Container>
+                <form onSubmit={handleSubmit} action="">
+                    <input onChange={handleChange} type="text" name="productName"  placeholder="Enter Product Name" />
+                    <input onChange={handleChange} type="text" name="productPrice"  placeholder="Enter Product Price" />
+                    <input onChange={handleChange} type="text" name="productStock"  placeholder="Enter Product Stock" />
+                    <input onChange={handleChange} type="text" name="productCategory"  placeholder="Enter Product Category" />
+                    <textarea onChange={handleChange} name="productDescription"  cols="30" rows="4" placeholder="Enter Product Description"></textarea>
+                    <button type="submit">Create Product</button>
+                </form>
+            </Container>
+        </>
     )
 
 }

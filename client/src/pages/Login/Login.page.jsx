@@ -2,7 +2,9 @@
 import { Container } from "./Login.page.style"
 
 import { useState, useEffect } from "react";
+import { Navbar } from "../../components/Navbar/Navbar.component";
 import axios from "axios";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
 
@@ -10,6 +12,8 @@ export const LoginPage = () => {
         email : "",
         password : "",
     })
+
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -27,7 +31,10 @@ export const LoginPage = () => {
             email : formData.email,
             password : formData.password,
         })
-        .then((res) => setToken(res))
+        .then((res) => {
+            setToken(res)
+            navigate("/", {replace : false})
+        })
         .catch((error) => console.log("error : ",error))
         // console.log('data:', data)
     }
@@ -42,13 +49,16 @@ export const LoginPage = () => {
     }
 
     return (
-        <Container>
-            <form onSubmit={handleSubmit} action="">
-                <input onChange={handleChange} type="email" name="email" id="" placeholder="Enter Email" />
-                <input onChange={handleChange} type="password" name="password" id="" placeholder="Enter Password" />
-                <button type="submit">Submit</button>
-            </form>
-        </Container>
+        <>
+            <Navbar />
+            <Container>
+                <form onSubmit={handleSubmit} action="">
+                    <input onChange={handleChange} type="email" name="email" placeholder="Enter Email" />
+                    <input onChange={handleChange} type="password" name="password" placeholder="Enter Password" />
+                    <button type="submit">Submit</button>
+                </form>
+            </Container>
+        </>
     )
 
 }

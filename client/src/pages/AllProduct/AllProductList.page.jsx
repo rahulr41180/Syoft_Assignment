@@ -20,6 +20,7 @@ export const AllProductList = () => {
         isCookie = isCookie.split("=");
         isCookie = isCookie[1];
         console.log('isCookie:', isCookie)
+        
         axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/product/getProduct", {
             isCookie : isCookie
         })

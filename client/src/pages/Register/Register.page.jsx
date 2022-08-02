@@ -27,7 +27,7 @@ export const RegisterPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/user/register", {
+        axios.post("http://localhost:5000/api/user/register", {
             username : formData.username,
             email : formData.email,
             

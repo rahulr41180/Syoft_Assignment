@@ -71,7 +71,7 @@ const loginUser = async (req,res,next) => {
         // console.log(req.session);
         // console.log(req.session.id);
 
-        req.session.isAuth = true;
+        // req.session.isAuth = true;
         
         // console.log('req.session.token:', req.session.token)
         // console.log("req : ",req.session.id);

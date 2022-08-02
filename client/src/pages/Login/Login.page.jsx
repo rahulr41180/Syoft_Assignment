@@ -23,7 +23,7 @@ export const LoginPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/user/login", {
+        axios.post("http://localhost:5000/api/user/login", {
             email : formData.email,
             password : formData.password,
         })

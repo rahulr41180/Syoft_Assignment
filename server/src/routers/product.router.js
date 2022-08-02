@@ -9,7 +9,7 @@ const isAuthorized = require("../middlewares/authorization");
 const { createProduct, getAllProducts } = require("../controllers/product.controller");
 
 router.post("/createProduct", isAuthenticated, isAuthorized("admin"), createProduct);
-router.get("/getProduct", isAuthenticated, isAuthorized("admin","manager"), getAllProducts);
+router.post("/getProduct", isAuthenticated, isAuthorized("admin","manager"), getAllProducts);
 
 
 

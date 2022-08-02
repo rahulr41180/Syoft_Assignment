@@ -6,6 +6,7 @@ const ApiFeatures = require("../utils/apiFeatures");
 const createProduct = async (req,res,next) => {
     try {
         req.body.userId = req.verifiedUser._id
+        // console.log('req.body.userId:', req.body.userId)
         const { productName, productPrice, productDescription, productStock, productCategory, userId } = req.body;
 
         const product = await Product1.create({ productName, productPrice, productDescription, productStock, productCategory, userId });

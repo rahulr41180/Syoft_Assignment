@@ -9,15 +9,16 @@ import { ProtectedRoute } from './components/PrivateRoute';
 import { AllProductList } from './pages/AllProduct/AllProductList.page';
 import { Navbar } from "./components/Navbar/Navbar.component";
 import { Logout } from "./components/Logout";
+import { HomePage } from './pages/Home/Home.page';
 
 
 function App() {
-  
+
   return (
     <Routes>
       <Route path="/" element={
         <>
-          <Navbar />
+          <HomePage />
         </>
       }></Route>
       <Route path="/register" element={

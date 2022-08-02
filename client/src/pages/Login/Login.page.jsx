@@ -52,6 +52,7 @@ export const LoginPage = () => {
         <>
             <Navbar />
             <Container>
+                <h2>Login Form</h2>
                 <form onSubmit={handleSubmit} action="">
                     <input onChange={handleChange} type="email" name="email" placeholder="Enter Email" />
                     <input onChange={handleChange} type="password" name="password" placeholder="Enter Password" />

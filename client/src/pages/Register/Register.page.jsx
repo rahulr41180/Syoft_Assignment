@@ -27,6 +27,7 @@ export const RegisterPage = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/user/register", {
             username : formData.username,
             email : formData.email,
@@ -44,6 +45,7 @@ export const RegisterPage = () => {
         <>
             <Navbar />
             <Container>
+                <h2>SignUp Page</h2>
                 <form onSubmit={handleSubmit} action="">
                     <input onChange={handleChange} type="text" name="username" placeholder="Enter Username" />
                     <input onChange={handleChange} type="email" name="email" placeholder="Enter Email" />

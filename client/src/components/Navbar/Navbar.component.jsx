@@ -16,22 +16,24 @@ export const Navbar = () => {
     }
 
     return (
-        <Container>
-            <Link to="/">Home</Link>
-            {isCookie == "" ? 
-                <Link to="/login">Login</Link>
-                :
-                <Link to="/logout">Logout</Link>
-            }
-            {isCookie == "" ?
-                <Link to="/register">SignUp</Link>
-                :
-                ""
-            }
-            <Link to="/createProduct">Create Product</Link>
+        <>
+            <Container>
+                <Link to="/">Home</Link>
+                {isCookie == "" ? 
+                    <Link to="/login">Login</Link>
+                    :
+                    <Link to="/logout">Logout</Link>
+                }
+                {isCookie == "" ?
+                    <Link to="/register">SignUp</Link>
+                    :
+                    ""
+                }
+                <Link to="/createProduct">Create Product</Link>
 
-            <Link to="/getProducts">All Product</Link>
-        </Container>
+                <Link to="/getProducts">All Product</Link>
+            </Container>
+        </>
     )
 
 }

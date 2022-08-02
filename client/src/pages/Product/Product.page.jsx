@@ -3,6 +3,7 @@ import { Container } from "./Product.page.style"
 
 import { useState, useEffect } from "react";
 import { Navbar } from "../../components/Navbar/Navbar.component";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const ProductCreatePage = () => {
@@ -15,6 +16,8 @@ export const ProductCreatePage = () => {
         productStock : "",
         productCategory : "",
     })
+
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -41,7 +44,11 @@ export const ProductCreatePage = () => {
             productCategory : formData.productCategory,
             isCookie : isCookie
         })
-        .then((res) => console.log("res : ",res))
+        .then((res) => {
+            console.log("res : ",res)
+
+            navigate("/getProducts", {replace : false});
+        })
         .catch((error) => console.log("error : ",error))
         // console.log('data:', data)
     }
@@ -50,6 +57,8 @@ export const ProductCreatePage = () => {
         <>
             <Navbar />
             <Container>
+
+                <h2>Create New Product</h2>
                 <form onSubmit={handleSubmit} action="">
                     <input onChange={handleChange} type="text" name="productName"  placeholder="Enter Product Name" />
                     <input onChange={handleChange} type="text" name="productPrice"  placeholder="Enter Product Price" />

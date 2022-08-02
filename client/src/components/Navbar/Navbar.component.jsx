@@ -8,7 +8,7 @@ export const Navbar = () => {
     let isCookie = document.cookie;
     isCookie = isCookie.split("=");
     isCookie = isCookie[1];
-    console.log('isCookie1:', isCookie)
+    // console.log('isCookie1:', isCookie)
     if(isCookie == "") {
 
         console.log("Hello");

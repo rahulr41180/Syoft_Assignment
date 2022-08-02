@@ -3,6 +3,7 @@ import { Container } from "./Register.page.style"
 
 import { useState, useEffect } from "react";
 import { Navbar } from "../../components/Navbar/Navbar.component";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const RegisterPage = () => {
@@ -15,6 +16,8 @@ export const RegisterPage = () => {
 
         role : ""
     })
+
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -36,8 +39,16 @@ export const RegisterPage = () => {
             password : formData.password,
             role : formData.role
         })
-        .then((res) => console.log("res : ",res))
-        .catch((error) => console.log("error : ",error))
+        .then((res) => {
+
+            navigate("/login", {replace : false})
+        })
+        .catch((error) => {
+            // console.log("error : ",error)
+            // console.log("error : ",error.response.data.error)
+
+            alert(error.response.data.error);
+        })
         // console.log('data:', data)
     }
 

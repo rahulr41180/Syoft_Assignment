@@ -9,7 +9,7 @@ import axios from "axios";
 export const AllProductList = () => {
 
     const [allProduct, setAllProduct] = useState([])
-    console.log('allProduct:', allProduct)
+    // console.log('allProduct:', allProduct)
 
     useEffect(() => {
         getData();
@@ -19,13 +19,18 @@ export const AllProductList = () => {
         let isCookie = document.cookie;
         isCookie = isCookie.split("=");
         isCookie = isCookie[1];
-        console.log('isCookie:', isCookie)
+        // console.log('isCookie:', isCookie)
         axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/product/getProduct", {
             isCookie : isCookie
         })
 
         .then((res) => setAllProduct(res.data.products))
-        .catch((error) => console.log(error))
+        .catch((error) =>  {
+            // console.log("error : ",error)
+            // console.log("error : ",error.response.data.error)
+            alert(error.response.data.error);
+
+        })
     }
 
     return (

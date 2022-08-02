@@ -6,12 +6,12 @@ export const ProtectedRoute = ({ children }) =>{
     isCookie = isCookie.split("=");
 
     isCookie = isCookie[1];
-    console.log('isCookie:', isCookie)
+    // console.log('isCookie:', isCookie)
 
     if(isCookie == "")
     {
 
-        console.log('isCookie2:', isCookie)
+        // console.log('isCookie2:', isCookie)
         return (
             <Navigate to = "/login" replace = {false}/>
         )

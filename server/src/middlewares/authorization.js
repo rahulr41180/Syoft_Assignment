@@ -8,7 +8,7 @@ const isAuthorized = (...roles) => {
         if(!roles.includes(req.verifiedUser.role)) {
             return res.status(500).json({
                 status : false,
-                erorr : `Role : ${req.verifiedUser.role} is not authorized to access this resource`
+                error : `Role : ${req.verifiedUser.role} is not authorized to access this resource`
             })
         }
 

@@ -35,7 +35,11 @@ export const LoginPage = () => {
             setToken(res)
             navigate("/", {replace : false})
         })
-        .catch((error) => console.log("error : ",error))
+        .catch((error) => {
+            console.log("error : ",error)
+            console.log("error : ",error.response.data.error)
+            alert(error.response.data.error);
+        })
         // console.log('data:', data)
     }
 

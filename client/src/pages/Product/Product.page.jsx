@@ -31,7 +31,7 @@ export const ProductCreatePage = () => {
         isCookie = isCookie.split("=");
         isCookie = isCookie[1];
 
-        axios.post("http://localhost:5000/api/product/createProduct", {
+        axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/product/createProduct", {
             productName : formData.productName,
             productPrice : formData.productPrice,
             productDescription : formData.productDescription,

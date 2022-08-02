@@ -17,7 +17,7 @@ export const AllProductList = () => {
         let isCookie = document.cookie;
         isCookie = isCookie.split("=");
         isCookie = isCookie[1];
-        axios.post("http://localhost:5000/api/product/getProduct", {
+        axios.post("https://syoft-assignment-rahul-rathor.herokuapp.com/api/product/getProduct", {
             isCookie : isCookie
         })
 
